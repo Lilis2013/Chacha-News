@@ -22,8 +22,9 @@ body {
     background-color: var(---color3);
     padding: 15px 20px;
     display: flex;
-    gap: 26px;
-    font-size: 14px;
+    gap: 15px;
+    font-size: 12px;
+    flex-wrap: wrap;
 }
 
 .barra-superior a {
@@ -227,8 +228,11 @@ body {
     
     /* Bloqueia totalmente a rolagem para os lados no celular */
 html, body {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 /* Corrige o container da logo que estava travando o tamanho antigo */
@@ -324,6 +328,7 @@ html, body {
 
     .acoes {
         width: auto !important;
+        max-width: 40px !important;
         display: flex !important;
         justify-content: flex-end !important;
     }

@@ -225,6 +225,28 @@ body {
    ========================================================================== */
 @media (max-width: 768px) {
     
+    /* Bloqueia totalmente a rolagem para os lados no celular */
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* Corrige o container da logo que estava travando o tamanho antigo */
+.logo-container {
+    width: auto !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Garante que a imagem respeite o espaço do topo sem transbordar */
+.logotopoimg {
+    height: 35px !important;
+    width: auto !important;
+    max-width: 100% !important;
+}
+
+
     /* 1. Zera as margens absurdas de 366px nas laterais */
     .topo {
         padding: 10px 15px !important; 

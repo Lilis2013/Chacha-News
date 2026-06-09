@@ -221,6 +221,37 @@ body {
     font-size: 16px;
 }
 
+/*=======================| TOPO PRINCIPAL |=======================*/
+.texto-noticia {
+    margin-top: 45px;
+}
+
+.texto-noticia p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.65;
+    color: #333333;
+    margin-bottom: 26px;
+    letter-spacing: -0.01em;
+}
+
+.texto-noticia strong, .texto-noticia b {
+    color: #111111;
+    font-weight: 700;
+}
+
+
+
+@media (max-width: 768px) {
+    .texto-da-noticia {
+        margin-top: 30px;     /* Reduz um pouco o espaçamento em telas menores */
+    }
+    .texto-da-noticia p {
+        font-size: 17px;      /* Calibra a leitura para a tela do smartphone */
+        line-height: 1.55;
+    }
+}
+
 /* ==========================================================================
    CONFIGURAÇÃO DE RESPONSIVIDADE PARA CELULARES (Telas menores que 768px)
    ========================================================================== */

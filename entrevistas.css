@@ -347,3 +347,37 @@ html, body {
         font-size: 12px !important; 
     }
 }
+
+/* ==========================================================================
+   FAIXA DE RESPONSIVIDADE DINÂMICA (Para Notebooks e Tablets - 1300px até 769px)
+   Ajusta proporcionalmente resoluções como 1296px, 1240px e 832px
+   ========================================================================== */
+@media (max-width: 1300px) and (min-width: 769px) {
+    
+    /* 1. Alivia as margens laterais do topo preto conforme a tela encolhe */
+    .topo {
+        padding: 0px 4vw !important; 
+    }
+
+    /* 2. Reduz o tamanho do texto "MUNDO" para dar respiro na linha 1 */
+    .editoria-topo {
+        font-size: 22px !important;
+    }
+
+    /* 3. Ajusta a linha 2 (Categorias) de forma totalmente elástica */
+    .topo-linha-2 {
+        /* O gap diminui automaticamente com base na largura da tela */
+        gap: clamp(10px, 1.8vw, 24px) !important; 
+        justify-content: center !important;
+        flex-wrap: wrap !important; /* Segurança máxima: se o texto bater na borda, ele pula linha sem vazar */
+        height: auto !important;     /* Permite o topo respirar caso ocorra quebra em telas como 832px */
+        padding: 6px 0 !important;
+    }
+
+    /* 4. Encolhe o tamanho da fonte das categorias de forma fluida */
+    .topo-linha-2 a {
+        /* A fonte vai variar suavemente entre 10px e 13px dependendo da tela */
+        font-size: clamp(10px, 1vw, 13px) !important;
+        white-space: nowrap !important; /* Impede que uma palavra única da frase quebre sozinha */
+    }
+}

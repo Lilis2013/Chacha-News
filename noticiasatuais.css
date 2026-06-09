@@ -1,0 +1,247 @@
+:root {
+    ---color1: #ffd700;
+    ---color2: #000;
+    ---color3: #f2f2f2;
+    ---color4: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(---color4);
+    color: 000;
+}
+
+/*=======================| BARRA SUPERIOR |=======================*/
+.barra-superior {
+    background-color: var(---color3);
+    padding: 15px 20px;
+    display: flex;
+    gap: 26px;
+    font-size: 14px;
+}
+
+.barra-superior a {
+    text-decoration: none;
+    color: #c4170c;     /*----------------------ATENÇÃO, MUDAR A COR DE CADA PALAVRA E ATRIBUIR A UMA BARRINHA ABAIXO*/
+}
+
+
+/*=======================| TOPO PRINCIPAL |=======================*/
+.topo {
+    background-color: var(---color2);
+    color: var(---color3);
+    display: flex;
+    align-items: center;
+    padding: 0px 20vw;
+    height: auto;
+    flex-direction: column;
+}
+
+.topo-linha-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.logo-container {
+    align-items: center;
+    justify-content: space-between;
+    display: block;
+}
+
+.logo-container img{
+    margin-top: 9px;
+    height: 140px;
+    display: block;
+}
+
+.editoria-topo {
+    font-size: 26px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: var(---color4);
+    text-align: center;
+    flex: 1;
+    /*left: 50%;
+    transform: translateX(-50%);
+    font-size: 26px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: var(---color4);*/
+}
+
+.acoes {
+    display: flex;
+    align-items: center;
+    width: 220px;
+}
+
+.topo-linha-2 {
+    display: flex;
+    justify-content: center; /* CASO QUEIRA TIRAR DO CENTRO */
+    align-items: center;
+    gap: 60px;
+    height: 35px;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.topo-linha-2 a {
+    color: var(---color3);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.topo-linha-2 a:hover {
+    color: var(---color1);
+}
+
+
+/*------------------------------------------------------------------------------------*/
+.relative { position: relative; }
+.w-full { width: 100%; }
+.absolute { position: absolute; }
+.right-2 { right: 10px; }
+.top-2 { top: 50%; transform: translateY(-50%); }
+.rounded { border-radius: 4px; }
+.border { border: 1px solid rgba(255,255,255,0.2); }
+.px-4 { padding-left: 12px; padding-right: 32px; }
+.py-2 { padding-top: 6px; padding-bottom: 6px; }
+.max-w-md { width: 100%; max-width: 160px;}
+.absolute.right-2.top-2 {background: none; border: none; cursor: pointer; font-size: 16px; color: #a0a0a0; font-family: sans-serif; display: flex; align-items: center; justify-content: center;}
+.c2 {background-color: #333333; border: 1px solid #444444; color: #ffffff;}
+.c2::placeholder {color: #ffffff; opacity: 0.9;}
+/*------------------------------------------------------------------------------------*/
+
+
+
+/*-------------------------------------------| CORPO DA MÁTERIA DA APRESENTAÇÃO|---------------------------------------------------------------------*/
+.conteudo-principal {
+    background-color: var(---color4);
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.materia {
+    max-width: 710px;
+    width: 100%;
+}
+
+.titulo-noticia {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    line-height: 1.15;
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 18px;
+}
+
+.subtitulo-noticia {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #555555;
+    margin-bottom: 24px;
+}
+
+.creditos-materia {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    color: #666666;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+}
+
+.autor {
+    font-weight: bold;
+}
+
+/*=======================| TOPO PRINCIPAL |=======================*/
+.compartilhar-redes {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.btn-rede {
+    text-decoration: none;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #dbdbdb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.btn-rede:hover {
+    background-color: #f5f5f5;
+}
+
+.midia-materia {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.placeholder-video {
+    width: 100%;
+    height: 400px;
+    background-color: #222222;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Essa regra só ativa quando a tela for menor que 768px (tamanho de um celular/tablet) */
+@media (max-width: 768px) {
+    .topo {
+        padding: 10px 20px; /* Só muda o padding em telas pequenas para os elementos não sumirem */
+    }
+    
+    .topo-linha-1 {
+        flex-direction: column; /* No celular, empilha os elementos para caberem na tela */
+        gap: 10px;
+        height: auto;
+    }
+
+    .editoria-topo {
+        font-size: 20px; /* Diminui o texto MUNDO no celular */
+    }
+
+    .acoes {
+        width: 100%;
+        justify-content: center; /* Centraliza a busca no celular */
+    }
+
+    .max-w-md {
+        max-width: 100%; /* Permite que a busca use o espaço do celular */
+    }
+}

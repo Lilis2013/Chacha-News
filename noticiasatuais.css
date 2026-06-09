@@ -220,28 +220,98 @@ body {
     font-size: 16px;
 }
 
-/* Essa regra só ativa quando a tela for menor que 768px (tamanho de um celular/tablet) */
+/* ==========================================================================
+   CONFIGURAÇÃO DE RESPONSIVIDADE PARA CELULARES (Telas menores que 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
-    .topo {
-        padding: 10px 20px; /* Só muda o padding em telas pequenas para os elementos não sumirem */
-    }
     
+    /* 1. Ajusta o container do topo para celulares */
+    .topo {
+        padding: 0px 15px !important; /* Margem interna menor nas laterais */
+        height: auto !important;      /* Permite que o topo se adapte à altura das duas linhas */
+    }
+
+    /* Linha 1: Força o alinhamento em linha perfeita e centraliza tudo verticalmente */
     .topo-linha-1 {
-        flex-direction: column; /* No celular, empilha os elementos para caberem na tela */
-        gap: 10px;
-        height: auto;
+        display: flex !important;
+        flex-direction: row !important; /* Mantém tudo em linha, sem empilhar */
+        justify-content: space-between !important; /* Espalha os elementos de ponta a ponta */
+        align-items: center !important; /* Alinha perfeitamente a altura do menu, logo, título e lupa */
+        height: 65px !important;       /* Altura controlada no celular */
+        width: 100% !important;
+        gap: 8px !important;
     }
 
+    /* Alinha o texto do Menu ao lado do ícone */
+    .menu-container {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    /* 2. Controla o tamanho da logo no celular para não empurrar os lados */
+    .logo-container {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .logo-container img {
+        max-height: 35px !important; /* Reduz ligeiramente a altura da imagem no celular */
+        width: auto !important;
+        margin-top: 0 !important;
+    }
+
+    /* 3. Ajusta o título MUNDO para ficar alinhado no centro */
     .editoria-topo {
-        font-size: 20px; /* Diminui o texto MUNDO no celular */
+        font-size: 16px !important; /* Tamanho compacto para não esmagar a linha */
+        text-align: center !important;
+        flex: 1 !important;         /* Ocupa o meio da barra de forma justa */
     }
 
+    /* 4. Oculta a caixa de texto do input no celular */
+    .acoes .relative input.w-full {
+        display: none !important; 
+    }
+
+    /* 5. Transforma o botão da lupa em um botão limpo e alinhado na ponta direita */
+    .absolute.right-2.top-2 {
+        position: relative !important; /* Remove o comportamento flutuante antigo */
+        right: 0 !important;
+        top: 0 !important;
+        transform: none !important;
+        background: none !important;    /* Remove fundos pesados para um visual minimalista */
+        border: none !important;
+        cursor: pointer !important;
+        font-size: 18px !important;     /* Deixa a lupa visível e nítida */
+        color: #ffffff !important;      /* Força a cor branca na lupa clássica */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Remove limites de largura da área da busca para encaixar na linha */
     .acoes {
-        width: 100%;
-        justify-content: center; /* Centraliza a busca no celular */
+        width: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
     }
 
     .max-w-md {
-        max-width: 100%; /* Permite que a busca use o espaço do celular */
+        max-width: none !important;
+        width: auto !important;
+    }
+
+    /* 6. Linha 2: Ajusta as categorias para não quebrarem o layout */
+    .topo-linha-2 {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        padding-bottom: 10px !important;
+        flex-wrap: wrap !important; /* Pula uma linha caso o celular seja muito estreito */
+    }
+    
+    .topo-linha-2 a {
+        font-size: 12px !important; /* Fonte menor para melhor leitura no celular */
     }
 }
+

@@ -22,8 +22,9 @@ body {
     background-color: var(---color3);
     padding: 15px 20px;
     display: flex;
-    gap: 26px;
-    font-size: 14px;
+    gap: 15px;
+    font-size: 12px;
+    flex-wrap: wrap;
 }
 
 .barra-superior a {
@@ -38,7 +39,7 @@ body {
     color: var(---color3);
     display: flex;
     align-items: center;
-    padding: 0px 336px;
+    padding: 0px 20vw;
     height: auto;
     flex-direction: column;
 }
@@ -131,3 +132,218 @@ body {
 .c2 {background-color: #333333; border: 1px solid #444444; color: #ffffff;}
 .c2::placeholder {color: #ffffff; opacity: 0.9;}
 /*------------------------------------------------------------------------------------*/
+
+
+
+/*-------------------------------------------| CORPO DA MÁTERIA DA APRESENTAÇÃO|---------------------------------------------------------------------*/
+.conteudo-principal {
+    background-color: var(---color4);
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.materia {
+    max-width: 710px;
+    width: 100%;
+}
+
+.titulo-noticia {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    line-height: 1.15;
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 18px;
+}
+
+.subtitulo-noticia {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #555555;
+    margin-bottom: 24px;
+}
+
+.creditos-materia {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    color: #666666;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+}
+
+.autor {
+    font-weight: bold;
+}
+
+/*=======================| TOPO PRINCIPAL |=======================*/
+.compartilhar-redes {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.btn-rede {
+    text-decoration: none;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #dbdbdb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.btn-rede:hover {
+    background-color: #f5f5f5;
+}
+
+.midia-materia {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.placeholder-video {
+    width: 100%;
+    height: 400px;
+    background-color: #222222;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* ==========================================================================
+   CONFIGURAÇÃO DE RESPONSIVIDADE PARA CELULARES (Telas menores que 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    /* Bloqueia totalmente a rolagem para os lados no celular */
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Corrige o container da logo que estava travando o tamanho antigo */
+.logo-container {
+    width: auto !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Garante que a imagem respeite o espaço do topo sem transbordar */
+.logotopoimg {
+    height: 35px !important;
+    width: auto !important;
+    max-width: 100% !important;
+}
+
+
+    /* 1. Zera as margens absurdas de 366px nas laterais */
+    .topo {
+        padding: 10px 15px !important; 
+        height: auto !important;      
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Linha 1: Força tudo a ficar na mesma linha horizontal */
+    .topo-linha-1 {
+        display: flex !important;
+        flex-direction: row !important; 
+        justify-content: space-between !important; 
+        align-items: center !important; 
+        height: auto !important;       
+        width: 100% !important;
+        gap: 10px !important;
+    }
+
+    /* 2. Força a caixa de texto cinza (input) a sumir completamente */
+    .topo-linha-1 input,
+    .topo-linha-1 .w-full,
+    .c2 {
+        display: none !important; 
+    }
+
+    /* 3. Tira a barra flutuante (.relative) para o botão não sumir */
+    .relative {
+        position: static !important;
+    }
+
+    /* 4. Transforma o seu botão em uma lupa branca simples alinhada na direita */
+    .topo-linha-1 button,
+    .absolute.right-2.top-2 {
+        position: static !important; 
+        background: none !important;    
+        border: none !important;
+        font-size: 20px !important;     
+        color: #ffffff !important;      
+        display: inline-block !important;
+        cursor: pointer !important;
+        width: auto !important;
+        height: auto !important;
+        transform: none !important;
+        margin: 0 !important;
+    }
+
+    /* 5. Alinha o Menu e a Logo */
+    .menu-container {
+        display: flex !important;
+        align-items: center !important;
+        white-space: nowrap !important;
+    }
+
+    .logo-container {
+        display: flex !important;
+        align-items: center !important;
+        width: auto !important;
+        height: auto !important;
+    }
+
+    .logo-container img {
+        height: 35px !important; /* Força a imagem a encolher para caber na tela */
+        width: auto !important;
+        margin-top: 0 !important;
+    }
+
+    /* 6. Ajusta o título (Notícias Atuais / Mundo) */
+    .editoria-topo {
+        font-size: 16px !important; 
+        text-align: center !important;
+        flex: 1 !important;         
+        margin: 0 5px !important;
+    }
+
+    .acoes {
+        width: auto !important;
+        max-width: 40px !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+    }
+
+    /* 7. Segunda Linha (Categorias) centralizada embaixo */
+    .topo-linha-2 {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        padding: 10px 0 0 0 !important;
+        flex-wrap: wrap !important; 
+        width: 100% !important;
+    }
+    
+    .topo-linha-2 a {
+        font-size: 12px !important; 
+    }
+}

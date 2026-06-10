@@ -1,8 +1,8 @@
 :root {
-    ---color1: #ffd700;
-    ---color2: #000;
-    ---color3: #f2f2f2;
-    ---color4: #fff;
+    --color1: #ffd700;
+    --color2: #000;
+    --color3: #f2f2f2;
+    --color4: #fff;
 }
 
 * {
@@ -13,13 +13,13 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(---color4);
+    background-color: var(--color4);
     color: 000;
 }
 
 /*=======================| BARRA SUPERIOR |=======================*/
 .barra-superior {
-    background-color: var(---color3);
+    background-color: var(--color3);
     padding: 15px 20px;
     display: flex;
     gap: 15px;
@@ -35,8 +35,8 @@ body {
 
 /*=======================| TOPO PRINCIPAL |=======================*/
 .topo {
-    background-color: var(---color2);
-    color: var(---color3);
+    background-color: var(--color2);
+    color: var(--color3);
     display: flex;
     align-items: center;
     padding: 0px 20vw;
@@ -77,7 +77,7 @@ body {
     font-size: 26px;
     font-weight: normal;
     letter-spacing: 1px;
-    color: var(---color4);
+    color: var(--color4);
     text-align: center;
     flex: 1;
     /*left: 50%;
@@ -105,7 +105,7 @@ body {
 }
 
 .topo-linha-2 a {
-    color: var(---color3);
+    color: var(--color3);
     text-decoration: none;
     font-size: 13px;
     font-weight: bold;
@@ -113,7 +113,7 @@ body {
 }
 
 .topo-linha-2 a:hover {
-    color: var(---color1);
+    color: var(--color1);
 }
 
 
@@ -133,11 +133,38 @@ body {
 .c2::placeholder {color: #ffffff; opacity: 0.9;}
 /*------------------------------------------------------------------------------------*/
 
+.conteudo-principal {
+    background-color: var(---color4);
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
 
+.materia {
+    max-width: 710px;
+    width: 100%;
+}
+
+.titulo-noticia {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    line-height: 1.15;
+    font-weight: 800;
+    color: #111111;
+    margin-bottom: 18px;
+}
+
+.subtitulo-noticia {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #555555;
+    margin-bottom: 24px;
+}
 
 /*-------------------------------------------| CORPO DA MÁTERIA DA APRESENTAÇÃO|---------------------------------------------------------------------*/
 .conteudo-principal {
-    background-color: var(---color4);
+    background-color: var(--color4);
     width: 100%;
     padding: 40px 20px;
     display: flex;
@@ -220,6 +247,77 @@ body {
     font-weight: bold;
     font-size: 16px;
 }
+
+
+/*===============================================|RODAPÉ (FOOTER) DA PÁGINA |===============================================*/
+.rodape {
+    background-color: var(--color2);
+    color: var(--color4);
+    padding: 30px 20px;
+}
+
+.rodape-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.logo-rodape {
+    height: 120px;
+    width: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.rodape-esquerda p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.rodape-direita h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.rodape-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.rodape-links a {
+    color: var(--color4);
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.2s ease;
+}
+
+.rodape-links a:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .rodape-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .rodape-direita {
+        margin-top: 20px;
+    }
+
+    .rodape-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+}
+
 
 /* ==========================================================================
    CONFIGURAÇÃO DE RESPONSIVIDADE PARA CELULARES (Telas menores que 768px)
@@ -381,4 +479,3 @@ html, body {
         white-space: nowrap !important; /* Impede que uma palavra única da frase quebre sozinha */
     }
 }
-

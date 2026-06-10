@@ -1,8 +1,8 @@
 :root {
-    ---color1: #ffd700;
-    ---color2: #000;
-    ---color3: #f2f2f2;
-    ---color4: #fff;
+    --color1: #ffd700;
+    --color2: #000;
+    --color3: #f2f2f2;
+    --color4: #fff;
 }
 
 * {
@@ -13,13 +13,13 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(---color4);
+    background-color: var(--color4);
     color: 000;
 }
 
 /*=======================| BARRA SUPERIOR |=======================*/
 .barra-superior {
-    background-color: var(---color3);
+    background-color: var(--color3);
     padding: 15px 20px;
     display: flex;
     gap: 15px;
@@ -35,8 +35,8 @@ body {
 
 /*=======================| TOPO PRINCIPAL |=======================*/
 .topo {
-    background-color: var(---color2);
-    color: var(---color3);
+    background-color: var(--color2);
+    color: var(--color3);
     display: flex;
     align-items: center;
     padding: 0px 20vw;
@@ -77,7 +77,7 @@ body {
     font-size: 26px;
     font-weight: normal;
     letter-spacing: 1px;
-    color: var(---color4);
+    color: var(--color4);
     text-align: center;
     flex: 1;
     /*left: 50%;
@@ -99,21 +99,31 @@ body {
     justify-content: center; /* CASO QUEIRA TIRAR DO CENTRO */
     align-items: center;
     gap: 60px;
-    height: 35px;
+    /*height: 35px;*/
     width: 100%;
+    padding-top: 10px;
     padding-bottom: 10px;
 }
 
 .topo-linha-2 a {
-    color: var(---color3);
+    display: inline-block;
+    color: var(--color3);
     text-decoration: none;
     font-size: 13px;
     font-weight: bold;
-    transition: color 0.2s;
+    transition: all 0.2s ease;
+    padding-bottom: 6px;
+    border-bottom: 3px solid transparent;
 }
 
-.topo-linha-2 a:hover {
-    color: var(---color1);
+.topo-linha-2 a.active {
+    color: var(--color1);
+    border-bottom: 3px solid var(--color1) !important;
+}
+
+.topo-linha-2 a:not(.active):hover {
+    color: rgb(255, 235, 124);
+    border-bottom-color: rgb(255, 235, 124);
 }
 
 
@@ -180,6 +190,10 @@ body {
     font-weight: bold;
 }
 
+.nome-autor {
+    color: #d32f2f;
+}
+
 /*=======================| TOPO PRINCIPAL |=======================*/
 .compartilhar-redes {
     display: flex;
@@ -209,16 +223,141 @@ body {
     margin-top: 20px;
 }
 
+/*=======================| CORPO MATÉRIA NOVO |=======================*/
+.corpo-materia {
+    max-width: 640px;
+    margin: 20px auto;
+    font-family: sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.paragrafo-padrao {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.texto-destaque {
+    font-size: 16px;
+    background-color: #fff5f5;
+    padding: 5px 0;
+}
+
+.divisor-vermelho {
+    border: 0;
+    border-top: 1px solid #c00;
+    margin: 25px 0;
+}
+
+.citacao-principal {
+    font-size: 21px;
+    font-weight: bold;
+    color: #111;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.citacao-secundaria {
+    font-size: 19px;
+    font-weight: bold;
+    color: #111;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.midia-materia {
+    width: 100%;
+    margin-top: 20px;
+}
+
 .placeholder-video {
     width: 100%;
-    height: 400px;
-    background-color: #222222;
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     font-size: 16px;
+}
+
+.curiosidade2 {
+    max-width: 500px;   /* define largura máxima da foto */
+    width: 100%;        /* ocupa até o limite definido */
+    height: auto;       /* mantém proporção */
+    border-radius: 6px; /* cantos arredondados opcionais */
+    display: block;
+    margin: 0 auto;     /* centraliza horizontalmente */
+}
+
+
+
+/*===============================================|RODAPÉ (FOOTER) DA PÁGINA |===============================================*/
+.rodape {
+    background-color: var(--color2);
+    color: var(--color4);
+    padding: 30px 20px;
+}
+
+.rodape-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.logo-rodape {
+    height: 120px;
+    width: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.rodape-esquerda p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.rodape-direita h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.rodape-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.rodape-links a {
+    color: var(--color4);
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.2s ease;
+}
+
+.rodape-links a:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .rodape-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .rodape-direita {
+        margin-top: 20px;
+    }
+
+    .rodape-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
 }
 
 /* ==========================================================================
@@ -379,5 +518,15 @@ html, body {
         /* A fonte vai variar suavemente entre 10px e 13px dependendo da tela */
         font-size: clamp(10px, 1vw, 13px) !important;
         white-space: nowrap !important; /* Impede que uma palavra única da frase quebre sozinha */
+        padding-bottom: 4px;
+        border-bottom-width: 2px;
+    }
+
+    .topo-linha-2 a.active {
+        border-bottom-color: var(---color1);
+    }
+
+    .topo-linha-2 a:not(.active):hover {
+        border-bottom-color: rgb(255, 235, 124);
     }
 }
